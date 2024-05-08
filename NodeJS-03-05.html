@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setTimeout(function(){console.log("Message will be printed after seconds-")},3000)
+        // setTimeout(function,ms)
+
+        // using fat arrow
+        setTimeout(() => {
+            console.log("Message will be printed after seconds-")
+        }, 3000);
+
+        // eg:- display addition of 2 numbers on browser using call back function.
+    //     function addition(num1,num2,mycallback){
+    //         sum = num1+num2
+    //         mycallback(sum)
+    //     }
+    //     function display(sum) {
+    //         document.write("Summation of 2 number is" ,sum);
+    //     }
+    //  addition(5,6,display)
+
+    //  initialize 2 var and increment both the var each time and display the add of both the var at interval of 1sec.
+
+
+//     function add(){  
+        
+    // function add(a,b){
+    //     document.write(a*b+"<br>");
+    // }
+    //     a=1;
+    //     b=2; 
+    //     setInterval(function(){add(a++,b++)},1)
+
+        // write a js code that display hello with increasing font size in interval of 50ms in blue color and it should stop when font size reaches to 50px.
+    </script>  
+    <p id="demo"></p> 
+    <script>
+        size=15
+        function change(){
+            obj=document.getElementById("demo")
+            obj.innerHTML="Hello"
+            obj.style.color="blue"
+            obj.style.fontSize=size+"px"
+            if (size<=50){
+                size++;
+            }
+        }
+        setInterval(change,50)
+    </script>
+</body>                        
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+ 

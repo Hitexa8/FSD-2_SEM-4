@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // ********stringify********
+        // var a={
+        //     "name":"abc",
+        //     "num":2
+        // }
+        // console.log(a.num)
+        // document.write(JSON.stringify(a))
+
+
+        // ********parse*************
+        // const user='{"name":["abc","def","pqr"],"age":"28"}'
+        // var User1=JSON.parse(user)
+        // document.write(User1.name)
+
+
+        // const user1={
+        //     "name":"abc",
+        //     "age":28,
+        //     "course":["fsd","DE","FSD2"],
+        //     "address":["T1","T2",{"T3":"Try Again"}]
+        // }
+        // console.log(user1.course[2])
+        // console.log(user1.address[2])
+        // console.log(user1.address[2].T3)
+
+        // const sub={
+        //     "FSD":[
+        //         {"topic":"HTML",
+        //         "course":"Beginner",
+        //         "content":{"tags":"table1","form":"xyz"}
+        //     },
+        //       {"topic":"CSS",
+        //         "course":"Beginner",
+        //         "content":["tags","table","form"]
+        //     }
+        //     ]
+        // }
+        // console.log(sub.FSD[0].content.tags)
+        // console.log(sub.FSD[1].content[0])
+
+
+        // write one json string with date property yyyy-mm-dd and print date in IST by clicking button
+        // function fun(){
+        //     var user='{"name":"Hitexa","dob":"2005-08-04"}'
+        //     obj=JSON.parse(user)
+        //     obj.dob=new Date(obj.dob)
+        //     document.getElementById("demo").innerHTML="Birthdate of "+obj.name+" is "+obj.dob
+        // }
+        
+        const sub={
+            "FSD":[
+                {"topic":"HTML",
+                "course":"Beginner",
+                "content":{"tags":"table1","form":"xyz"}},
+                {"topic":"CSS",
+                "course":"Beginner",
+                "content":["tags","table","form"]}
+            ]
+        }
+       for(i in sub.FSD){
+        for (j in sub.FSD[i]){
+             console.log(sub.FSD[i][j])
+             console.log(j)
+            }
+        }
+       
+// write a func that takes array and returns an obj with the first element of array as obj key and last element as 
+// that key value
+    function obj(array){
+        var obj1={}
+        obj1[array[0]]=array[array.length-1]
+        return obj1
+    }
+    var a=['a','b','c','d']
+    console.log(obj(a))
+
+    </script>
+    
+</body>
+</html>
