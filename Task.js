@@ -20,16 +20,18 @@
 // app.listen(3000)
 
 
+
+var expr = require("express")
+var app = expr();
 student = [{name:"abc",age:20},
 {name:"def",age:34},
 {name:"xyz",age:11}]
-var expr = require("express")
-var app = expr()
 app.get("/",(req,res)=>{
-    res.send()
+    res.set("content-type","application/json")
+    res.send(student)
 })
 app.get('/sorted',(req,res)=>{
-    res.set("content-type","text/html")
+    res.set("content-type","application/json")
     for (i = 0; i < student.length; i++) {
         for (j = 0; j < student.length; j++) {
             if(student[i].age>student[j].age){
@@ -37,9 +39,9 @@ app.get('/sorted',(req,res)=>{
                 student[i] = student[j]
                 student[j] = temp
             }
-        }
+        }}
     res.write(JSON.stringify(student))
     res.send()
-    }
+    
 })
 app.listen(3001)
