@@ -10,6 +10,7 @@ res.set("content-type","text/html")
 res.write("<h1>First</h1>");
 next();
 }
+// if we change sequence then it will give error and if we comment the next() then it will not stop there.
 
 // middle 2
 const cb1=(req,res,next)=>
