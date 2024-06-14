@@ -1,0 +1,5 @@
+const expr=require("express")
+const app=expr()
+const m1=require("./API_data")
+app.use("/p",m1)
+app.listen(3015)
