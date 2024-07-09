@@ -1,47 +1,18 @@
-// Task1
-// student={
-//     u1:[{name:"LJU",id:1},
-//     {name:"LJU1",id:2},
-//     {name:"LJU2",id:3}]}
+// build basic react app with one h1 element having name in itallic blue color with fontsize 50px, one ordered list of
+// 3 fruits,current time and current date with it.addEventListener('type', listener, options)
 
-// var expr = require("express")
-// var app = expr()
-
-// app.get("/",(req,res)=>{
-//     res.set("content-type","text/html")     
-//     res.write("<center><table border='1px solid'><tr><th>Name</th><th>ID</th></tr>")
-//     for(i of student.u1){
-//         res.write("<tr><td>"+i.name+"</td>")
-//         res.write("<td>"+i.name+"</td></tr>")
-//     }
-//     res.write("</table>")
-//     res.send()
-// })
-// app.listen(3000)
-
-
-
-var expr = require("express")
-var app = expr();
-student = [{name:"abc",age:20},
-{name:"def",age:34},
-{name:"xyz",age:11}]
-app.get("/",(req,res)=>{
-    res.set("content-type","application/json")
-    res.send(student)
-})
-app.get('/sorted',(req,res)=>{
-    res.set("content-type","application/json")
-    for (i = 0; i < student.length; i++) {
-        for (j = 0; j < student.length; j++) {
-            if(student[i].age>student[j].age){
-                temp = student[i]
-                student[i] = student[j]
-                student[j] = temp
-            }
-        }}
-    res.write(JSON.stringify(student))
-    res.send()
-    
-})
-app.listen(3001)
+function task() {
+    return(
+        <div>
+            <h1 style={{fontFamily:'italic',color:'blue',fontSize:50}}>Hitexa</h1>
+            <ol>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Banana</li>
+            </ol>
+                <p>Current Time: {new Date().toLocaleTimeString()}</p>
+                <p>Current Date: {new Date().toLocaleDateString()}</p>
+        </div>
+    )
+}
+export default task;
