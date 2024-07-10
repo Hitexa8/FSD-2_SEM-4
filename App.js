@@ -6,7 +6,7 @@
 //     </div>
 //   );
 // }
-import Pre from './Pre'
+// import Pre from './Pre'
 // function App(){
 //   const xyz = 'computer'
 //   return(
@@ -49,12 +49,22 @@ import Pre from './Pre'
 // }
 // export default App;
 
-import Event from './Event2'
+// import Event from './Event2'
+// function App() {
+//   return (
+//     <div> 
+//       <Event/>
+//     </div>
+//   );
+// }
+// export default App;
+
+import Map1 from "./Map1";
 function App() {
-  return (
-    <div> 
-      <Event/>
-    </div>
-  );
+return (
+<div>
+<Map1/>
+</div>
+);
 }
 export default App;
