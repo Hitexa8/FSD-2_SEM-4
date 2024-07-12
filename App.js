@@ -59,11 +59,60 @@
 // }
 // export default App;
 
-import Map1 from "./Map1";
+// import Map1 from "./Map1";
+// function App() {
+// return (
+// <div>
+// <Map1/>
+// </div>
+// );
+// }
+// export default App;
+
+
+
+// import Mobile from './mobile.jfif'
+// import Laptop from './laptop.jfif'
+// import MapTask from './mapTask'
+// function App(){
+//     var products = [{name:"mobile",price:10000,pic:Mobile},{name:"laptop",price:60000,pic:Laptop}]
+//     return(
+//                 <>
+//                     <MapTask info={products} ></MapTask>
+//                     </>
+//         )
+//     }
+// export default App;
+
+
+
+// import List from './list'
+// function App() {
+//   return (
+//     <div> 
+//       <List/>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+// import Filt1 from "./Filt1";
+// function App() {
+// return (
+// <div>
+// <Filt1/>
+// </div>
+// );
+// }
+// export default App;
+
+import './App.css';
+import Main from "./Main.js";
 function App() {
 return (
 <div>
-<Map1/>
+<Main/>
 </div>
 );
 }
