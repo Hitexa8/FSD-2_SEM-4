@@ -107,13 +107,31 @@
 // }
 // export default App;
 
-import './App.css';
-import Main from "./Main.js";
+// import './App.css';
+// import Main from "./Main.js";
+// function App() {
+// return (
+// <div>
+// <Main/>
+// </div>
+// );
+// }
+// export default App;
+
+// import US1 from "./UseState.js";
+// function App() {
+// return (
+// <div>
+// <US1/>
+// </div>
+// );
+// }
+// export default App;
+
+import USTask from "./UseState.js";
 function App() {
 return (
-<div>
-<Main/>
-</div>
+<USTask/>
 );
 }
 export default App;
