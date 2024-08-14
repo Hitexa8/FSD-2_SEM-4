@@ -1,0 +1,73 @@
+db.createCollection('PKP')
+db.PKP.drop()
+db.PKP.updateMany({},{$set:{'join_date':new Date()}})
+db.PKP.insertOne({user_id:'mongo',age:45},'status:'A')
+
+
+//New Question : SQL to mongoDB mapping
+ 
+//1.CREATE TABLE Students ( Name VARCHAR(50), ID INT PRIMARY KEY, Age INT, Mark INT, Grade CHAR(2) ); 
+ db.StudentDetails.insertMany([
+     { Name: "Ananya", ID: 101, Age: 20, Mark: 85, Grade: "B" },
+     { Name: "Raj", ID: 102, Age: 22, Mark: 90, Grade: "A" },
+     { Name: "Priya", ID: 103, Age: 19, Mark: 75, Grade: "C" },
+     { Name: "Vikram", ID: 104, Age: 21, Mark: 80, Grade: "B" },
+     { Name: "Neha", ID: 105, Age: 23, Mark: 95, Grade: "A" },
+     { Name: "Aditya", ID: 106, Age: 24, Mark: 88, Grade: "B+" },
+     { Name: "Sneha", ID: 107, Age: 20, Mark: 92, Grade: "A" },
+     { Name: "Rohan", ID: 108, Age: 21, Mark: 78, Grade: "C+" },
+     { Name: "Kavita", ID: 109, Age: 22, Mark: 81, Grade: "B" },
+     { Name: "Amit", ID: 110, Age: 23, Mark: 89, Grade: "B+" }])
+
+//2.SELECT * FROM Students; 
+db.StudentDetails.find()
+
+//3.UPDATE Students SET Mark = 93, Grade = 'A' WHERE ID = 101; 
+db.StudentDetails.deleteOne({ID:101})
+
+//4.DELETE FROM Students WHERE ID = 103; 
+db.StudentDetails.updateOne({ID:101},{$set:{Mark:93,Grade:'A'}})
+
+//5.SELECT * FROM Students WHERE Age > 20 AND Grade = 'A'; 
+db.StudentDetails.find({$and:[{Age:{$gt:20}},{Grade:'A'}]})
+
+//6.6.SELECT * FROM Students WHERE Grade = 'A' OR Grade = 'B+';
+db.StudentDetails.find({$or:[{Grade:'B+'},{Grade:'A'}]})
+
+//7.SELECT * FROM Students WHERE (Age < 21 AND Mark > 80) OR (Grade = 'A' AND NOT (Age = 22));
+db.StudentDetails.find({$or:[{$and:[{Age:{$lt:21}},{Mark:{$gt:80}}]},{$and:[{Grade:'A'},{Age:{$not:{$eq:22}}}]}]})
+
+//8.SELECT * FROM Students WHERE Name REGEXP '^A'; 
+db.StudentDetails.find({Name:{$regex:/^A/}})
+
+//9.SELECT * FROM Students WHERE Name REGEXP 'vi'; 
+db.StudentDetails.find({Name:{$regex:/vi/}})
+
+//10.SELECT * FROM Students WHERE Name REGEXP '^.{5}$'; 
+ db.StudentDetails.find({Name:{$regex:/^.{5}$/}})
+
+
+//Practice Question
+
+//create employee database
+db.Employee.insertMany([
+...   { id: 1, name: "Alice Johnson", salary: 70000, position: "Software Engineer" },
+...   { id: 2, name: "Bob Smith", salary: 85000, position: "Project Manager" },
+...   { id: 3, name: "Charlie Brown", salary: 60000, position: "Data Scientist" },
+...   { id: 4, name: "Diana Prince", salary: 95000, position: "Senior Developer" },
+...   { id: 5, name: "Edward Taylor", salary: 72000, position: "UX Designer" },
+...   { id: 6, name: "Fiona White", salary: 78000, position: "Data Scientist" },
+...   { id: 7, name: "George Martin", salary: 65000, position: "Database Administrator" }
+... ])
+
+//print highest salary person's name
+ db.Employee.find({},{name:1,_id:0}).sort({salary:-1}).limit(1)
+
+//decrease salary by 10% whose salary is greater than 60000
+ db.StudentDetails.updateMany({salary:{$gt:60000}},{$mul:{salary:0.9}})
+
+//Increase salary of data Scientist by 5%.
+db.StudentDetails.updateMany({position:'Data Scientist'},{$mul:{salary:1.05}})
+
+
+npm config set proxy http://192.168.10.252:808
